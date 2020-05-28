@@ -1,0 +1,204 @@
+/* *******************************
+*** Estilos personalizados para
+    la PAGINA DE ENLACES
+********************************** */
+	#p_container {
+		width: 80%;
+		max-width: 1260px;
+		min-width: 780px;
+		background: #FFF;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	#p_sidebar1 {
+		float: right;
+		width: 20%;
+		margin-top: 25px;
+	}
+	#p_sidebar1 .marco{
+		width: 95%;
+		top: -10px;
+		background: #93A5C4;
+		padding: 10px 0px; 
+    	border-radius: 3px;
+		box-shadow: 0px 1px 20px 1px #C7C7C7;
+	}
+
+	#p_content {
+		padding: 10px 0;
+		width: 80%;
+		float: right;
+	}
+	
+	#p_content ul, .content ol { 
+		padding: 0 15px 15px 40px;
+	}
+
+	#p1_container{
+    	background-color:white;
+    	margin-bottom: 25px;
+    	margin-top: 25px;
+    	padding-bottom: 25px;
+    	padding-left: 10%;
+    	padding-right:10%;
+    	width: 80%;
+		float: right;
+    }
+
+    #p1_container .element h3{
+    	float:right;
+    	text-align: right;
+    	font-family: 'Open Sans', sans-serif;
+    	padding-right: 7px;
+    	position:relative;
+      color: white;
+      font-weight: bold;
+      /*font-size: 20px;*/
+    	top:-50px;
+    	-moz-transition: all 1s;
+        -webkit-transition: all 1s;
+        transition: all 1s;
+        font-size:105%;
+        behavior: url(templates/ot_enterdesign/assets/css/images/scripts/PIE.htc);
+    }
+
+    #p1_container .element .selected{
+    	top:-200px;
+    	font-size: 110%;
+    	width: 80%;
+    	color:black;
+    }
+
+    #p1_container .element{
+    	background-color:white;
+    	margin:12px;
+    	height: 200px;
+    	width: 200px;
+    	float: left;
+      color:white;
+
+    	box-shadow:  0 1px 20px 1px #C7C7C7;
+    	-moz-box-shadow: 0 1px 20px 1px #C7C7C7;
+        -webkit-box-shadow: 0 1px 20px 1px #C7C7C7;
+
+
+    	border-radius: 3px;
+    	-moz-border-radius: 3px;
+    	-webkit-border-radius: 3px;
+
+
+    	transition: box-shadow 0.5s;
+    	-moz-transition: box-shadow 0.5s;
+        -webkit-transition: box-shadow 0.5s;
+
+        transition: -webkit-box-shadow 0.5s
+        -moz-transition: -webkit-box-shadow 0.5s;
+        -webkit-transition: -webkit-box-shadow 0.5s;
+
+        transition: -moz-box-shadow 0.5s
+        -moz-transition: -moz-box-shadow 0.5s;
+        -webkit-transition: -moz-box-shadow 0.5s;
+
+        behavior: url(templates/ot_enterdesign/assets/css/images/scripts/PIE.htc);
+    }
+
+    #p1_container .element:hover{
+    	height:200px;
+    }
+
+    #p1_container .element:hover{
+    	color: black;
+    	box-shadow: 0 1px 20px 1px #555;
+    	-moz-box-shadow: 0 1px 20px 1px #555;
+    	-webkit-box-shadow: 0 1px 20px 1px #555;
+
+        behavior: url(templates/ot_enterdesign/assets/css/images/scripts/PIE.htc);
+    }
+
+    #p1_container .disabled h3{
+    	color:#BBB ;
+    }
+
+    #p1_container .disabled .selected{
+    	color:#555;
+    }
+
+    #p1_container .element{
+    	background-size: auto 200px;
+        background-repeat: no-repeat;
+    }
+
+
+    .wrappers{
+    	top:100px;
+    	margin-top: 150px;
+    	background-color: black;
+    	height: 50px;
+    	filter: alpha(opacity=40);
+    	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    	 opacity: 0.4;
+    	transition: 1s;
+    	-moz-transition: 1s;
+    	-webkit-transition: 1s;
+
+    	border-radius: 0 0 3px 3px;
+    	-moz-border-radius: 0 0 3px 3px;
+    	-webkit-border-radius: 0 0 3px 3px;
+
+        behavior: url(templates/ot_enterdesign/assets/css/images/scripts/PIE.htc);
+
+    	filter: alpha(opacity=40);
+    	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    }
+
+
+    .wrappers-selected{
+    	margin-top: 0px;
+    	background-color: white;
+    	height: 200px;
+    }
+		
+	#degradado {
+	background: -webkit-linear-gradient(red, blue); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(red, blue); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(red, blue); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(red, #69F); /* Standard syntax */
+	}
+
+/*********************************************************************************/
+/* Boton Cerrar SesiÃ³n                                                           */
+/*********************************************************************************/
+	.enlaces_border{
+    font-size: 13px;
+    font-weight: bold;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    border: solid 3px grey;
+    padding: 0px 10px 0px 10px;
+	background-color:#CCC
+	}
+/*********************************************************************************/
+/* Aplicación deshabilitada                                                      */
+/*********************************************************************************/
+	    .disabled{
+    	/*top:100px;*/
+    	/*margin-top: 150px;*/
+    	/*background-color: black;*/
+    	/*height: 50px;*/
+    	filter: alpha(opacity=40);
+    	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    	 opacity: 0.4;
+    	/*transition: 1s;
+    	-moz-transition: 1s;
+    	-webkit-transition: 1s;*/
+
+    	/*border-radius: 0 0 3px 3px;
+    	-moz-border-radius: 0 0 3px 3px;
+    	-webkit-border-radius: 0 0 3px 3px;*/
+
+       /* behavior: url(templates/ot_enterdesign/assets/css/images/scripts/PIE.htc);*/
+
+    	/* filter: alpha(opacity=40);
+    	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";*/
+    }

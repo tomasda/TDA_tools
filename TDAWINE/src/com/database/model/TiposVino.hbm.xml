@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20-dic-2017 10:10:06 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="wine" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.database.model.TiposVino" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="TiposVino">
+        <id name="idTiposVino" type="java.lang.Integer">
+            <column name="idTiposVino"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="descripcion" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="Descripcion" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="vinos" optimistic-lock="true" sort="unsorted" table="Vino">
+            <key on-delete="noaction">
+                <column name="idTiposVino" not-null="true"/>
+            </key>
+            <one-to-many class="com.database.model.Vino" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

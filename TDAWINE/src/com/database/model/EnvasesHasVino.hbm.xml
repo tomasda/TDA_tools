@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20-dic-2017 10:10:06 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="wine" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.database.model.EnvasesHasVino" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="Envases_has_Vino">
+        <composite-id class="com.database.model.EnvasesHasVinoId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="envasesIdEnvases" type="int">
+                <column name="Envases_idEnvases"/>
+            </key-property>
+            <key-property name="vinoIdVino" type="int">
+                <column name="Vino_idVino"/>
+            </key-property>
+            <key-property name="vinoTiposVinoIdTiposVino" type="int">
+                <column name="Vino_TiposVino_idTiposVino"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

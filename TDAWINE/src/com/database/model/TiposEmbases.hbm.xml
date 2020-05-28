@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20-dic-2017 10:10:06 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="wine" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.database.model.TiposEmbases" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="TiposEmbases">
+        <id name="idTiposEmbases" type="java.lang.Integer">
+            <column name="idTiposEmbases"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="descripcion" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="Descripcion" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="pesoUnidad" optimistic-lock="true" type="long" unique="false">
+            <column name="pesoUnidad" not-null="true" precision="10" scale="0"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="envases" optimistic-lock="true" sort="unsorted" table="Envases">
+            <key on-delete="noaction">
+                <column name="TiposEmbases_idTiposEmbases" not-null="true"/>
+            </key>
+            <one-to-many class="com.database.model.Envases" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Consejo WebSocket Client</title>
+    <script language="javascript" type="text/javascript">
+            
+            var wsUri = 
+            // "ws://apt-ae-des3.puertosdetenerife.org:8180/ConsejoWebSocket/consejo";
+             "ws://localhost:8080/ConsejoWebSocket/consejo";
+            
+            function init() {
+                output = document.getElementById("output");
+            }
+            function send_message() {
+                websocket = new WebSocket(wsUri);
+                websocket.onopen = function(evt) {
+                    onOpen(evt)
+                };
+                websocket.onmessage = function(evt) {
+                    onMessage(evt)
+                };
+                websocket.onerror = function(evt) {
+                    onError(evt)
+                };
+            }
+            function onOpen(evt) {
+                writeToScreen("Connected to Endpoint!");
+                doSend(textID.value);
+            }
+            function onMessage(evt) {
+                writeToScreen("Message Received: " + evt.data);
+            }
+            function onError(evt) {
+                writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+            }
+            function doSend(message) {
+                writeToScreen("Message Sent: " + message);
+                websocket.send(message);
+                // You can close communication at any time
+                //websocket.close();
+            }
+            function writeToScreen(message) {
+                var pre = document.createElement("p");
+                pre.style.wordWrap = "break-word";
+                pre.innerHTML = message;
+                 
+                output.appendChild(pre);
+            }
+            window.addEventListener("load", init, false);
+        </script>
+</head>
+    <body>
+
+        <h1 style="text-align: center;">Consejo WebSocket Client</h1>
+        <br/>
+        <div style="text-align: center;">
+            <form action="">
+                <input onclick="send_message()" value="Send Message" type="button"/>
+                <input id="textID" name="message" value="Hello WebSocket!" type="text"/><br/>
+            </form>
+        </div>
+        <div id="output"/>
+    </body>
+</html>

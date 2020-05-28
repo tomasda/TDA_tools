@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script language="javascript" type="text/javascript">
+            
+            var wsUri = "ws://localhost:8080/websocket-basic/hello";
+            <!-- var wsUri = "ws://localhost:8080/javaee7-websocket-basic/hello"; -->
+            
+           
+            function send_message() {
+                websocket = new WebSocket(wsUri);
+                websocket.onopen = function(evt) {
+                    onOpen(evt)
+                };
+                websocket.onmessage = function(evt) {
+                    onMessage(evt)
+                };
+                websocket.onerror = function(evt) {
+                    onError(evt)
+                };
+            }
+            }
+            </script>
+</head>
+<body>
+	<h1 style="text-align: center;">Hello World WebSocket Client</h1>
+	<br />
+	<div style="text-align: center;">
+		<form action="">
+			<input onclick="send_message()" value="Send Message" type="button" />
+			<input id="textID" name="message" value="Hello WebSocket!"
+				type="text" /><br />
+		</form>
+	</div>
+	<div id="output"></div>
+
+</body>
+</html>

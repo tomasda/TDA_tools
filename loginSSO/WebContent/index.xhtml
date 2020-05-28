@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile">
+<f:view>
+	<div style="visibility: hidden;">#{commonBean.login}</div>
+	<h:head>
+		<meta name="viewport"
+			content="user-scalable=no, width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link href="resources/css/default.css" rel="stylesheet"
+			type="text/css" media="all" />
+		<link href="resources/css/fonts.css" rel="stylesheet" type="text/css"
+			media="all" />
+		<link type="text/css" href="resources/css/personalizado.css"
+			rel="stylesheet"></link>
+		<title>Escritorio APSCT - Login</title>
+	</h:head>
+	<h:body>
+	<h:outputScript library="js" name="jquery-1.js" />
+	<h:outputScript library="js" name="animate-services.js" />
+		<div id="header" class="container">
+			<div id="logo">
+				<h1>
+					<a href="#">Escritorio Electrónico</a> 
+				</h1>
+				<h3>Bienvenido: #{commonBean.userName}</h3>
+			</div>
+			
+			<div id="menu">
+				<ul>
+					<li class="active"><a href="#" accesskey="1" title="">Inicio</a></li>
+					<li><a href="#" accesskey="3" title="">Futuro</a></li>
+					<li><a href="#" accesskey="3" title="">Info</a></li>
+					<li><a href="#" accesskey="5" title="">Contacto</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="date" style="font-family: Verdana, sans-serif;">
+			<img src="resources/images/1.gif"  style="width: 50; height: 35; border: 0;"/><br />
+			 <b>20</b>E<label style="font-size: 10pt">ne</label><label style="font-size:6pt" >2016</label>
+		</div>
+		<div id="user">
+			<a class="enlaces_border" title="Cerrar Sesión" target="_blank"
+				href="index.php">Cerrar Sesión</a>
+		</div>
+				<h3>#{commonBean.appAccess}</h3>#{commonBean.version}
+		<div id="page">
+			<div id="p_container">
+				<div id="p_sidebar1">
+					<div class="marco">
+						<!-- Bloque reservado para las NOTICIAS. -->
+						<div style="font-family: Verdana, sans-serif;">
+						<p align="center" style="background: #999999">
+							<label><b>Noticias</b></label> 
+						</p>
+							<p>
+								<label style="font-size: em; color:#990000 ">
+									<b><span style="background: transparent">20</span></b></label>
+							</p>
+						</div>
+						<p><br/></p>
+					</div>
+				</div>
+				<div id="p_content" >
+					<div id="p1_container">
+						<div class="#{commonBean.enabled('registro')}" >
+							<div class="element" onclick="#{commonBean.url('registro')}"
+								style="background-image: url('resources/images/sede/servicios/registro.jpg');">
+								<div style="cursor: pointer;" class="wrappers"> </div>
+								<h3>Registro E/S</h3>
+							</div></div>
+							<div class="#{commonBean.enabled('gestorExpedientes')}" >
+							<div class="element" onclick="#{commonBean.url('gestorExpedientes')}"
+								style="background-image: url('resources/images/sede/servicios/expedientes.jpg');">
+								<div class="wrappers"> </div>
+								<h3>Gestor de Expedientes</h3>
+							</div></div>
+							<div class="#{commonBean.enabled('portafirmas')}" >
+							<div class="element e3" onclick="#{commonBean.url('portafirmas')}"
+								style="background-image: url('resources/images/sede/servicios/portafirmas.jpg');">
+								<div class="wrappers"> </div>
+								<h3>Portafirmas</h3>
+							</div></div>
+							<div class="#{commonBean.enabled('bandejaDecretos')}" >
+							<div class="element e4" onclick="#{commonBean.url('bandejaDecretos')}"
+								style="background-image: url('resources/images/sede/servicios/bandeja.jpg');">
+								<div class="wrappers"> </div>
+								<h3>Bandeja de Decretos</h3>
+							</div></div>
+							<div class="#{commonBean.enabled('portaActuaciones')}" >
+							<div class="element e5" onclick="#{commonBean.url('portaActuaciones')}"
+								style="background-image: url('resources/images/sede/servicios/actuaciones.jpg');">
+								<div class="wrappers"> </div>
+								<h3>Porta Actuaciones</h3>
+							</div></div>
+							<div class="#{commonBean.enabled('sedeElectronica')}" >
+							<div class="element e6" onclick="#{commonBean.url('sedeElectronica')}"
+								style="background-image: url('resources/images/sede/servicios/sede.jpg');">
+								<div class="wrappers"> </div>
+								<h3>SEDE Electrónica</h3>
+							</div></div>
+							<div class="#{commonBean.enabled('auditoriaYTraza')}" >
+						<div class="element e7" onclick="#{commonBean.url('auditoriaYTraza')}"
+							style="background-image: url('resources/images/sede/servicios/auditoria.jpg');">
+							<div class="wrappers"> </div>
+							<h3>Auditoría y Traza</h3>
+						</div></div>
+						<div class="#{commonBean.enabled('notificaciones')}" >
+						<div class="element e8" onclick="#{commonBean.url('notificaciones')}"
+							style="background-image: url('resources/images/sede/servicios/notificaciones.jpg');">
+							<div class="wrappers"> </div>
+							<h3>Notificaciones Elect.</h3>
+						</div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright" class="container">
+			<p>
+					 Untitled. All rights reserved. | Photos by <a
+					href="http://fotogrph.com/">Fotogrph</a> | Design by <a
+					href="http://templated.co" rel="nofollow">TEMPLATED</a>.
+			</p>
+		</div>
+	</h:body>
+</f:view>
+</html>

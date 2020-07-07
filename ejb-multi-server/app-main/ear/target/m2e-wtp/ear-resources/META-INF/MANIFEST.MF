@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Implementation-Title: Quickstart: ejb-multi-server - app-main - ear
+Implementation-Version: 7.2.0.GA
+Java-Version: 1.8.0_211
+Built-By: Tomas
+Scm-Connection: scm:git:git@github.com:jboss/jboss-parent-pom.git/quic
+ kstart-parent/ejb-multi-server/ejb-multi-server-app-main/ejb-multi-se
+ rver-app-main-ear
+Specification-Vendor: JBoss by Red Hat
+Os-Arch: amd64
+Specification-Title: Quickstart: ejb-multi-server - app-main - ear
+Implementation-Vendor-Id: org.jboss.eap.quickstarts
+Java-Vendor: Oracle Corporation
+Os-Name: Windows 10
+Scm-Url: http://github.com/jboss/jboss-parent-pom/quickstart-parent/ej
+ b-multi-server/ejb-multi-server-app-main/ejb-multi-server-app-main-ea
+ r
+Implementation-Vendor: JBoss by Red Hat
+Os-Version: 10.0
+Scm-Revision: 
+Build-Jdk: 1.8.0_211
+Specification-Version: 7.2
+Created-By: Maven Integration for Eclipse
+Implementation-URL: http://www.jboss.org/jdf/quickstarts/get-started/e
+ jb-multi-server/ejb-multi-server-app-main/ejb-multi-server-app-main-e
+ ar/
+

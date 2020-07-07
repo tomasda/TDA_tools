@@ -1,6 +1,7 @@
 package com.opencanarias.consejo.websocket;
 
 import java.io.IOException;
+import java.io.Serializable;
 
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
@@ -16,8 +17,9 @@ import com.opencanarias.consejo.websocket.model.Sessions;
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
 @ServerEndpoint(value="/consejo")
-public class ConsejoEndPoint {
+public class ConsejoEndPoint implements ConsejoWebSocketRemote, ConsejoWebSocketLocal, Serializable {
 	private Logger logger = Logger.getLogger(ConsejoEndPoint.class);
+	private static final long serialVersionUID = 1L;
 
 
 	@OnMessage
@@ -57,7 +59,8 @@ public class ConsejoEndPoint {
 	@OnError
 	public void error(Throwable t) {}
 
-	public  void broadcast(String message) throws IOException, EncodeException {
+	@Override
+	public  void broadcast(Object message) throws IOException, EncodeException {
 
 		Sessions.sesionesAEliminar.forEach(sesionAEliminar -> {
 			try {
@@ -84,5 +87,7 @@ public class ConsejoEndPoint {
 			}
 		});
 	}
+
+	
 }
 

@@ -1,0 +1,5 @@
+#Thu Jul 18 11:41:25 BST 2019
+D\:\\DESA_JDK8\\workspace\\jboss-eap-quickstarts-7.2.0.GA\\ejb-multi-server\\app-main\\web\\src\\main\\java\\org\\jboss\\as\\quickstarts\\ejb\\multi\\server\\app\\JsfController.java=1548335376000
+D\:\\DESA_JDK8\\workspace\\jboss-eap-quickstarts-7.2.0.GA\\ejb-multi-server\\app-main\\web\\src\\main\\java\\org\\jboss\\as\\quickstarts\\ejb\\multi\\server\\app\\EjbInvocation.java=1548335376000
+module-resource*?\:/wildfly-checkstyle/suppressions.xml=DD3FD5987C62C3034A4613F83C42B24683BCFC2E
+configuration*?=3651DCFA54E64ACDEB7A347C18ACC00066FAC05D

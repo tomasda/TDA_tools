@@ -8,6 +8,7 @@ import java.util.Date;
  */
 public class Vino implements java.io.Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private Integer idVino;
 	private TiposVino tiposVino;
 	private String descripcion;

@@ -9,13 +9,10 @@ import java.util.Set;
  */
 public class TiposVino implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Integer idTiposVino;
 	private String descripcion;
-	private Set vinos = new HashSet(0);
+	private Set<?> vinos = new HashSet<>(0);
 
 	public TiposVino() {
 	}
@@ -24,7 +21,7 @@ public class TiposVino implements java.io.Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public TiposVino(String descripcion, Set vinos) {
+	public TiposVino(String descripcion, Set<?> vinos) {
 		this.descripcion = descripcion;
 		this.vinos = vinos;
 	}
@@ -45,11 +42,11 @@ public class TiposVino implements java.io.Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public Set getVinos() {
+	public Set<?> getVinos() {
 		return this.vinos;
 	}
 
-	public void setVinos(Set vinos) {
+	public void setVinos(Set<?> vinos) {
 		this.vinos = vinos;
 	}
 

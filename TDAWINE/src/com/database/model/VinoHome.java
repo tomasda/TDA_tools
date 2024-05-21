@@ -101,10 +101,10 @@ public class VinoHome {
 		}
 	}
 
-	public List findByExample(Vino instance) {
+	public List<?> findByExample(Vino instance) {
 		log.debug("finding Vino instance by example");
 		try {
-			List results = sessionFactory.getCurrentSession().createCriteria("com.database.model.Vino")
+			List<?> results = sessionFactory.getCurrentSession().createCriteria("com.database.model.Vino")
 					.add(Example.create(instance)).list();
 			log.debug("find by example successful, result size: " + results.size());
 			return results;

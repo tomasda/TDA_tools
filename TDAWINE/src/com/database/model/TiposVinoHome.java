@@ -3,11 +3,14 @@ package com.database.model;
 
 import java.util.List;
 import javax.naming.InitialContext;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Example;
 
 /**
  * Home object for domain model class TiposVino.
@@ -104,10 +107,17 @@ public class TiposVinoHome {
 	public List<TiposVino> findByExample(TiposVino instance) {
 		log.debug("finding TiposVino instance by example");
 		try {
-			List<TiposVino> results = sessionFactory.getCurrentSession().createCriteria("com.database.model.TiposVino")
-					.add(Example.create(instance)).list();
+			//TODO: El código comentado está deprecado. Y el código posterior es un ejemplo pendiente de comprobar.
+//			List<TiposVino> results = sessionFactory.getCurrentSession().createCriteria("com.database.model.TiposVino")
+//					.add(Example.create(instance)).list();
+			CriteriaBuilder builder = sessionFactory.getCriteriaBuilder();
+			CriteriaQuery<TiposVino> criteria = builder.createQuery(TiposVino.class);
+			Root<TiposVino> employeeRoot=criteria.from(TiposVino.class);
+			criteria.select(employeeRoot);
+			criteria.where(builder.equal(employeeRoot.get("Id"), instance.getIdTiposVino()));
+			List<TiposVino> results = sessionFactory.openSession().createQuery(criteria).getResultList();
 			log.debug("find by example successful, result size: " + results.size());
-			return results;
+			return  results;
 		} catch (RuntimeException re) {
 			log.error("find by example failed", re);
 			throw re;

@@ -3,11 +3,14 @@ package com.database.model;
 
 import java.util.List;
 import javax.naming.InitialContext;
+import javax.persistence.criteria.CriteriaQuery;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Example;
+
 
 /**
  * Home object for domain model class TiposEmbases.
@@ -105,8 +108,13 @@ public class TiposEmbasesHome {
 	public List<?> findByExample(TiposEmbases instance) {
 		log.debug("finding TiposEmbases instance by example");
 		try {
-			List<?> results = sessionFactory.getCurrentSession().createCriteria("com.database.model.TiposEmbases")
-					.add(Example.create(instance)).list();
+			Session session = sessionFactory.getCurrentSession();
+			CriteriaQuery<TiposEmbases> criteriaQuery = session.getCriteriaBuilder().createQuery(TiposEmbases.class);
+			criteriaQuery.from(TiposEmbases.class);
+			List<TiposEmbases> results = session.createQuery(criteriaQuery).getResultList();
+			
+			//List<?> results = sessionFactory.getCurrentSession().createCriteria("com.database.model.TiposEmbases")
+			//		.add(Example.create(instance)).list();
 			log.debug("find by example successful, result size: " + results.size());
 			return results;
 		} catch (RuntimeException re) {
